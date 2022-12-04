@@ -13,7 +13,7 @@ export class GameLogic
 
     mouseClick(event)
     {
-        console.log("avs")
+        console.log(this.game.score)
     }
 
     logic()

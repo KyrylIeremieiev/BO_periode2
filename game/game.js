@@ -11,6 +11,10 @@ class Game
         this.y = 0;
         this.rectangle=false;
         this.beam = 0;
+        this.score=0;
+        this.genc=0;
+        this.gcount=0;
+        this.death=false;
     }
 
     init()
@@ -32,7 +36,8 @@ class Game
         {
             _this.rectangle=true;
             _this.beam=0;
-            scope.logic.mouseClick(event);   
+            scope.logic.mouseClick(event); 
+            _this.score += 1;  
         }
         setInterval(function () {scope.doGameFrame()}, 33); 
     }

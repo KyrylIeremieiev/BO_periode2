@@ -36,20 +36,46 @@ export class GameRenderer{
         g.fillStyle = "#000000";
         g.fillRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
 
-        g.fillStyle = "#357CF1";
-        g.fillRect(this.game.x, 10, 10, 10);
-        
-        if (this.game.rectangle == true) 
-        { 
-            this.g.fillstyle = "#357CF1"
-            this.g.fillRect(this.game.x, 20, 10, 100)
-            this.game.beam+=1;
-            if (this.game.beam >= 10)
+        if (this.game.death == false)
+        {
+            g.fillStyle = "#357CF1";
+            g.fillRect(this.game.x, 150, 10, 10);
+            
+            if (this.game.rectangle == true) 
+            { 
+                this.g.fillstyle = "#357CF1"
+                this.g.fillRect(this.game.x, 45, 10, 100)
+                this.game.beam+=1;
+                if (this.game.beam >= 10)
+                {
+                    this.game.rectangle=false;
+                }
+            }
+
+            if (this.game.score <= 10)
             {
-                this.game.rectangle=false;
+                
+                g.fillStyle = "#008000";
+                g.fillRect(0, 0, 200, 75);
+            }
+            this.game.gcount += 1
+            console.log(this.game.gcount)
+            if (this.game.gcount >= 100)
+            {
+                g.fillStyle = "#008000";
+                g.fillRect(100, 100, 200, 75);
             }
         }
+        if (this.game.x >= 100 && this.game.gcount >= 100)
+        {
+            this.game.death=true;
+        }
+        else if (this.game.death==true)
+        {
+            g.fillStyle = "#000000";
+            g.fillRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
 
+        }
     }
 
 
