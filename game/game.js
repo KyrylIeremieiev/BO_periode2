@@ -1,6 +1,6 @@
 import {GameRenderer} from "./gameRenderer.js"
 import {GameLogic} from "./gameLogic.js"
-
+import {Rect} from "./rect.js"  
 class Game
 {
     constructor()
@@ -14,7 +14,14 @@ class Game
         this.score=0;
         this.genc=0;
         this.gcount=0;
-        this.death=false;
+        this.death=true;
+        this.boss=false;
+        this.cycle1=false;
+        this.player = new Rect(0, 0, 24, 24)
+        this.enemy=new Rect(200, 50, 350, 100)
+        this.sscreen=new Rect(0, 0, 800, 400)
+        this.enemyBeam= new Rect (34, 63, 85, 300)
+        this.s1 = new Rect(475, 0, 434, 190)
     }
 
     init()
@@ -31,19 +38,20 @@ class Game
             scope.logic.mouseMoved(event)
         })
         let _this = this;
+
         this.renderer.canvas.addEventListener('click', canvasClicked, false);
         function canvasClicked(event) 
         {
-            _this.rectangle=true;
-            _this.beam=0;
-            scope.logic.mouseClick(event); 
-            _this.score += 1;  
+            scope.logic.mouseClick(event);  
+             
         }
+        this.cycle1 = false;
         setInterval(function () {scope.doGameFrame()}, 33); 
     }
 
     doGameFrame()
     {
+        this.gcount+=1
         this.logic.logic();
         this.renderer.render();
     }
