@@ -10,15 +10,15 @@ export class GameRenderer{
         this.playerSprite = new Rect(87, 17, 175, 109);
         this.enemySprite = new Rect(24, 25, 129, 57);
         this.StartScreen = new Rect(0, 0, 800, 400);
-        this.enemybeam= new Rect (40, 0, 85, 187)
+        this.enemybeam= new Rect (40, 50, 85, 187)
         this.score1_ = new Rect(0, 0, 434, 190)
         
     }
 
     loadImages()
     {
-        let sources = ["img/space_enemy.png", "img/player.png", "img/StartScreen.png",
-        "img/beam.png", "img/score1.png", "img/score2.png", "img/endscreen.png"];
+        let sources = ["game/img/space_enemy.png", "game/img/player.png", "game/img/StartScreen.png",
+        "game/img/beam.png", "game/img/score1.png", "game/img/score2.png", "game/img/endscreen.png"];
         for (let i = 0; i < sources.length; i++)
         {
             let loaded = 0
@@ -103,6 +103,7 @@ export class GameRenderer{
             }
 
             //boss beam
+            //cycle 1
             if(this.game.cycle1 == true && this.game.score <= 100 && this.game.gcount <= 500)
             {
                 g.fillStyle = "#008000";
@@ -112,6 +113,17 @@ export class GameRenderer{
                     clip3.x, clip3.y, clip3.w, clip3.h, 
                     beam.x, beam.y, beam.w, beam.h)
             }
+            //cycle 2
+            if(this.game.cycle2 == true && this.game.gcount <=500)
+            {
+                g.fillStyle = "#008000";
+                let beam = this.game.enemyBeam;
+                let clip3 = this.enemybeam;
+                g.drawImage(this.images[3], 
+                    clip3.x, clip3.y, clip3.w, clip3.h, 
+                    400, beam.y, beam.w, beam.h)
+            }
+
 
             //player
             g.fillStyle = "#357CF1";

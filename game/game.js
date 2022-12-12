@@ -17,13 +17,14 @@ class Game
         this.death=true;
         this.boss=false;
         this.cycle1=false;
+        this.cycle2=false;
         this.end=false;
         this.control=false;
         this.wfc=0;
         this.player = new Rect(0, 0, 24, 24)
         this.enemy=new Rect(200, 50, 350, 100)
         this.sscreen=new Rect(0, 0, 800, 400)
-        this.enemyBeam= new Rect (34, 40, 85, 250)
+        this.enemyBeam= new Rect (40, 120, 76, 190)
         this.s1 = new Rect(200, 250, 434, 190)
     }
 

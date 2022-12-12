@@ -50,6 +50,12 @@ export class GameLogic
         }
         
         //cycles
+        //cycle0
+        if(this.game.gcount == 0)
+        {
+            this.game.cycle1=false
+            this.game.cycle2=false
+        }
         
         //cycle1
         if (this.game.gcount >= 100 && this.game.gcount <= 200)
@@ -60,14 +66,32 @@ export class GameLogic
         {
             this.game.cycle1=false;
         }
+        //cycle2
+        if(this.game.gcount >= 300 && this.game.gcount <= 301)
+        {
+            this.game.cycle2 = true
+            this.game.cycle1=false
+        }
 
+        //cycloop
         if (this.game.gcount >= 100 && this.game.player.x < 100 && this.game.score <= 100 && this.game.gcount <= 500)
+        {
+            this.game.death = true
+        }
+        if(this.game.gcount >= 300 && this.game.gcount <= 500 && this.game.player.x < 500 && this.game.player.x > 350)
         {
             this.game.death = true
         }
         if (this.game.gcount >= 800)
         {
             this.game.gcount = 0
+        }
+        
+        if (this.game.death == true)
+        {
+            this.game.gcount = 0
+            this.game.cycle1= false
+            this.game.cycle2=false
         }
         
         //debugging

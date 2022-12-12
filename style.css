@@ -10,7 +10,9 @@ body {
     margin-right: auto;
 }
 
-
+canvas{
+    width: 100%;
+}
 
 .nav ul li {
     display: inline-block;
