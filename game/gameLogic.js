@@ -14,20 +14,27 @@ export class GameLogic
     //mouse click inputs
     mouseClick(event)
     {
-        if (this.game.player.x >= 50 && this.game.player.x <= 538)
+        if (this.game.control == true)
         {
-            this.game.score++
+            if (this.game.player.x >= 50 && this.game.player.x <= 538)
+            {
+                this.game.score++
+            }
+            this.game.rectangle=true;
+            this.game.beam=0;
+            console.log(this.game.score)
         }
-        this.game.rectangle=true;
-        this.game.beam=0;
-        console.log(this.game.score)
         if (this.game.death == true)
         {
-            this.game.death = false
-            this.game.cycle1=false
-            this.game.gcount = 0
+            this.game.death = false;
+            this.game.cycle1=false;
+            this.game.gcount = 0;
+            this.game.score = 0;
         }
-
+        if (this.game.score >= 100)
+        {
+            this.game.end=true;
+        }
     }
 
     logic()
@@ -52,16 +59,21 @@ export class GameLogic
         if (this.game.gcount >=500)
         {
             this.game.cycle1=false;
-            console.log(this.game.player.x)
         }
 
-        if (this.game.gcount >= 100 && this.game.player.x < 200 && this.game.score <= 10 && this.game.gcount <= 500)
+        if (this.game.gcount >= 100 && this.game.player.x < 100 && this.game.score <= 100 && this.game.gcount <= 500)
         {
             this.game.death = true
         }
         if (this.game.gcount >= 800)
         {
             this.game.gcount = 0
+        }
+        
+        //debugging
+        if (this.game.death == false)
+        {
+            this.game.control = true;
         }
     }
 

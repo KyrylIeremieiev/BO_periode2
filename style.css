@@ -1,0 +1,171 @@
+html {
+    background-color: gray;
+}
+
+body {
+    background-color: white;
+    max-width: 1024px;
+    min-height: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.nav ul {
+    padding-left: 400px;
+}
+
+.minigame {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid black;
+}
+
+.infobox {
+    display: inline-block;
+    width: 47%;
+    height: 220px;
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.infobox img {
+    width: 100%;
+    height: 100%;
+}
+
+.comments {
+    min-height: 45px;
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foot {
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+
+.long {
+    width: 98%;
+}
+
+.comments {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.imglogo {
+    width: 70%;
+    height: 70%;
+    border: 1px solid lightslategray;
+}
+
+.logo ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.logo ul li a {
+    padding: 2px;
+    margin: 2px;
+
+}
+
+.media-icons img {
+    width: 34px;
+    height: 34px;
+    border: 1px solid black;
+}
+
+.media-icons :first-child {
+    margin-left: 1px;
+}
+
+.imgfooter {
+    margin-bottom: 15px;
+}
+
+.foot ul {
+    width: auto;
+    height: 220px;
+    position: relative;
+}
+
+.foot ul li {
+    width: 22%;
+    display: inline-block;
+    list-style-type: none;
+    display: flex, inline-block;
+    height: 195px;
+    position: absolute;
+}
+
+
+#secund {
+    top: 0;
+    left: 25%;
+}
+
+#secund p {
+    font-size: 12px;
+}
+
+#therd {
+    left: 50%;
+}
+
+#therd p {
+    font-size: 12px;
+}
+
+#forth {
+    left: 75%;
+}
+
+#forth p {
+    font-size: 12px;
+}
+
+.language li a {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.head {
+    position: relative;
+}
+
+.langdiv {
+    position: absolute;
+}
+
+.imgs {
+    width: 135px !important;
+    height: 200px !important;
+}
+
+.imgspan {
+    position: absolute;
+    top: 5%;
+    left: 70%;
+}

@@ -17,7 +17,8 @@ export class GameRenderer{
 
     loadImages()
     {
-        let sources = ["img/space_enemy.png", "img/player.png", "img/StartScreen.png", "img/beam.png", "img/score1.png", "img/score2.png"];
+        let sources = ["img/space_enemy.png", "img/player.png", "img/StartScreen.png",
+        "img/beam.png", "img/score1.png", "img/score2.png", "img/endscreen.png"];
         for (let i = 0; i < sources.length; i++)
         {
             let loaded = 0
@@ -61,9 +62,8 @@ export class GameRenderer{
         if (this.game.death == false)
         {
             //score
-            if (this.game.score <= 10)
+            if (this.game.score <= 100)
             {
-                console.log("ok")
                 g.fillStyle = "#008000";
                 let sb = this.game.s1;
                 let clipS = this.score1_;
@@ -71,7 +71,7 @@ export class GameRenderer{
                     clipS.x, clipS.y, clipS.w, clipS.h, 
                     sb.x, sb.y, sb.w, sb.h)
             }
-            else if (this.game.score >= 10)
+            else if (this.game.score >= 100)
             {
                 g.fillStyle = "#008000";
                 let sb = this.game.s1;
@@ -80,18 +80,10 @@ export class GameRenderer{
                     clipS.x, clipS.y, clipS.w, clipS.h, 
                     sb.x, sb.y, sb.w, sb.h)
             }
-
-            //player
-            g.fillStyle = "#357CF1";
-            let player = this.game.player;
-            let clip = this.playerSprite;
-            g.drawImage(this.images[1], 
-                clip.x, clip.y, clip.w, clip.h, 
-                player.x, 325, player.w, player.h)
             
             
             //boss
-            if (this.game.score <= 10)
+            if (this.game.score <= 100)
             {
                 g.fillStyle = "#008000";
                 let enemy = this.game.enemy;
@@ -111,7 +103,7 @@ export class GameRenderer{
             }
 
             //boss beam
-            if(this.game.cycle1 == true && this.game.score <= 10 && this.game.gcount <= 500)
+            if(this.game.cycle1 == true && this.game.score <= 100 && this.game.gcount <= 500)
             {
                 g.fillStyle = "#008000";
                 let beam = this.game.enemyBeam;
@@ -120,7 +112,26 @@ export class GameRenderer{
                     clip3.x, clip3.y, clip3.w, clip3.h, 
                     beam.x, beam.y, beam.w, beam.h)
             }
-            
+
+            //player
+            g.fillStyle = "#357CF1";
+            let player = this.game.player;
+            let clip = this.playerSprite;
+            g.drawImage(this.images[1], 
+                clip.x, clip.y, clip.w, clip.h, 
+                player.x, 275, player.w, player.h)
+
+            //end screen
+            if (this.game.end == true)
+            {
+                g.fillStyle = "#000000";
+                console.log("end is nigh")
+                let sscreen = this.game.sscreen;
+                let clip2 = this.StartScreen;
+                g.drawImage(this.images[6], 
+                clip2.x, clip2.y, clip2.w, clip2.h, 
+                sscreen.x, sscreen.y, sscreen.w, sscreen.h)
+            }
         }
     }
 
