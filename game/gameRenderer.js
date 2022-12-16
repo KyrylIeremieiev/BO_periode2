@@ -48,7 +48,7 @@ export class GameRenderer{
         g.fillStyle = "#000000";
         g.fillRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
 
-        if (this.game.death == true)
+        if (this.game.death == true && this.game.end == false)
         {
             g.fillStyle = "#000000";
             let sscreen = this.game.sscreen;

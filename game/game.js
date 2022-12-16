@@ -14,6 +14,8 @@ class Game
         this.score=0;
         this.genc=0;
         this.gcount=0;
+        this.dcount=0;
+        this.res=false;
         this.death=true;
         this.boss=false;
         this.cycle1=false;

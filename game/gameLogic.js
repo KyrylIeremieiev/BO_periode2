@@ -18,7 +18,7 @@ export class GameLogic
         {
             if (this.game.player.x >= 50 && this.game.player.x <= 538)
             {
-                this.game.score++
+                this.game.score+=1
             }
             this.game.rectangle=true;
             this.game.beam=0;
@@ -34,6 +34,10 @@ export class GameLogic
         if (this.game.score >= 100)
         {
             this.game.end=true;
+            this.game.score=0
+            this.game.gcount=0
+            this.game.cycle1=false
+            this.game.cycle2=false
         }
     }
 
