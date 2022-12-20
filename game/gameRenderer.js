@@ -104,14 +104,14 @@ export class GameRenderer{
 
             //boss beam
             //cycle 1
-            if(this.game.cycle1 == true && this.game.score <= 100 && this.game.gcount <= 500)
+            if(this.game.cycle1 == true)
             {
                 g.fillStyle = "#008000";
                 let beam = this.game.enemyBeam;
                 let clip3 = this.enemybeam;
                 g.drawImage(this.images[3], 
                     clip3.x, clip3.y, clip3.w, clip3.h, 
-                    beam.x, beam.y, beam.w, beam.h)
+                    this.game.beamx, beam.y, beam.w, beam.h)
             }
             //cycle 2
             if(this.game.cycle2 == true && this.game.gcount <=500)
@@ -121,7 +121,7 @@ export class GameRenderer{
                 let clip3 = this.enemybeam;
                 g.drawImage(this.images[3], 
                     clip3.x, clip3.y, clip3.w, clip3.h, 
-                    400, beam.y, beam.w, beam.h)
+                    this.game.beamx, beam.y, beam.w, beam.h)
             }
 
 

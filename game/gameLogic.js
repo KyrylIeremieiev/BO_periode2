@@ -41,8 +41,30 @@ export class GameLogic
         }
     }
 
+    colcheck()
+    {
+        //beam#1
+        if (this.game.cycle1 == true
+            && this.game.player.x <= (this.game.beamx + 50))
+        {
+            this.game.death = true;
+        }
+
+        //beam#2
+        if(this.game.cycle2 == true
+            && this.game.player.x <= (this.game.beamx + 50)
+            && this.game.player.x >= this.game.beamx)
+        {
+            this.game.death = true;
+        }
+    }
+
     logic()
     {
+        if (this.game.cycle2 == true)
+        {
+            console.log("balls")
+        }
         //So that beam disappears
         if (this.game.rectangle == true)
         {
@@ -65,27 +87,25 @@ export class GameLogic
         if (this.game.gcount >= 100 && this.game.gcount <= 200)
         {
             this.game.cycle1=true;
+            this.game.beamx=40;
         }
-        if (this.game.gcount >=500)
+        if (this.game.gcount >= 500)
         {
             this.game.cycle1=false;
         }
         //cycle2
-        if(this.game.gcount >= 300 && this.game.gcount <= 301)
+        if(this.game.gcount >= 300 && this.game.gcount <= 500)
         {
             this.game.cycle2 = true
             this.game.cycle1=false
+            this.game.beamx = 400;
+        }
+        if (this.game.gcount >= 500)
+        {
+            this.game.cycle2 = false;
         }
 
         //cycloop
-        if (this.game.gcount >= 100 && this.game.player.x < 100 && this.game.score <= 100 && this.game.gcount <= 500)
-        {
-            this.game.death = true
-        }
-        if(this.game.gcount >= 300 && this.game.gcount <= 500 && this.game.player.x < 500 && this.game.player.x > 350)
-        {
-            this.game.death = true
-        }
         if (this.game.gcount >= 800)
         {
             this.game.gcount = 0
@@ -103,6 +123,7 @@ export class GameLogic
         {
             this.game.control = true;
         }
+        this.colcheck()
     }
 
 }
