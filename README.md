@@ -11,6 +11,7 @@ De code moet vanuit index.nl.html gerunt worden.
 Als je de game alleen wilt runnen moet de code aangepast worden:
 in gameRenderer.js:
 verander loadImages loadImages() naar:
+
 loadImages()
 {
     let sources = ["img/space_enemy.png", "img/player.png", "img/StartScreen.png",
