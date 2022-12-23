@@ -59,6 +59,34 @@ export class GameLogic
         }
     }
 
+    DeathCheck()
+    {
+        if (this.game.death == true)
+        {
+            this.game.rectangle=false;
+            this.game.beam = 0;
+            this.game.score=0;
+            this.game.genc=0;
+            this.game.gcount=0;
+            this.game.dcount=0;
+            this.game.res=false;
+            this.game.death=true;
+            this.game.boss=false;
+            this.game.cycle1=false;
+            this.game.cycle2=false;
+            this.game.end=false;
+            this.game.control=false;
+            this.game.wfc=0;
+            this.game.beamx=0;
+        }
+        
+        //debugging
+        if (this.game.death == false)
+        {
+            this.game.control = true;
+        }
+    }
+
     logic()
     {
         if (this.game.cycle2 == true)
@@ -110,20 +138,10 @@ export class GameLogic
         {
             this.game.gcount = 0
         }
+
         
-        if (this.game.death == true)
-        {
-            this.game.gcount = 0
-            this.game.cycle1= false
-            this.game.cycle2=false
-        }
-        
-        //debugging
-        if (this.game.death == false)
-        {
-            this.game.control = true;
-        }
         this.colcheck()
+        this.DeathCheck()
     }
 
 }
