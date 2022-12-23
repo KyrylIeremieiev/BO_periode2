@@ -12,31 +12,31 @@ Als je de game alleen wilt runnen moet de code aangepast worden:
 in gameRenderer.js:
 verander loadImages loadImages() naar:
 
-loadImages()
-{
-    let sources = ["img/space_enemy.png", "img/player.png", "img/StartScreen.png",
-    "img/beam.png", "img/score1.png", "img/score2.png", "img/endscreen.png"];
-    for (let i = 0; i < sources.length; i++)
+    loadImages()
     {
-        let loaded = 0
-        let img = new Image;
-        let scope = this
+        let sources = ["img/space_enemy.png", "img/player.png", "img/StartScreen.png",
+        "img/beam.png", "img/score1.png", "img/score2.png", "img/endscreen.png"];
+        for (let i = 0; i < sources.length; i++)
+        {
+            let loaded = 0
+            let img = new Image;
+            let scope = this
 
-        img.onload = function()
-        {   
-            if (this.loaded == sources.length)
-            {
-            scope.game.startGame()
-            }
-            this.loaded++;
-            scope.game.startGame()
+            img.onload = function()
+            {   
+                if (this.loaded == sources.length)
+                {
+                scope.game.startGame()
+                }
+                this.loaded++;
+                scope.game.startGame()
 
-        };
-        img.src = sources[i];
+            };
+            img.src = sources[i];
 
-        this.images.push(img)
+            this.images.push(img)
+        }
     }
-}
 
 
 Voor hele website in loadImages:
