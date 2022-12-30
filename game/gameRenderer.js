@@ -18,7 +18,7 @@ export class GameRenderer{
     loadImages()
     {
         let sources = ["game/img/space_enemy.png", "game/img/player.png", "game/img/StartScreen.png",
-        "game/img/beam.png", "game/img/score1.png", "game/img/score2.png", "game/img/endscreen.png"];
+        "game/img/beam.png", "game/img/score1.png", "game/img/score2.png", "game/img/endscreen.png", "game/img/diffscreen.png"];
         for (let i = 0; i < sources.length; i++)
         {
             let loaded = 0
@@ -38,6 +38,7 @@ export class GameRenderer{
             img.src = sources[i];
 
             this.images.push(img)
+            console.log(typeof sources["game/img/diffscreen.psd"])
         }
     }
 

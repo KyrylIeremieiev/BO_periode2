@@ -14,6 +14,17 @@ export class GameLogic
     //mouse click inputs
     mouseClick(event)
     {
+        //diff
+        if (this.game.death == true && this.game.y < 200)
+        {
+            this.game.diff = 1;
+            console.log(this.game.diff)
+        }
+        else if (this.game.death == true && this.game.y > 200)
+        {
+            this.game.diff = 2;
+            console.log(this.game.diff)
+        }
         if (this.game.control == true)
         {
             if (this.game.player.x >= 50 && this.game.player.x <= 538)
@@ -87,22 +98,8 @@ export class GameLogic
         }
     }
 
-    logic()
+    cycles()
     {
-        if (this.game.cycle2 == true)
-        {
-            console.log("balls")
-        }
-        //So that beam disappears
-        if (this.game.rectangle == true)
-        {
-            this.game.beam++
-        }
-        if (this.game.beam >= 20)
-        {
-            this.game.rectangle = false
-        }
-        
         //cycles
         //cycle0
         if(this.game.gcount == 0)
@@ -139,7 +136,26 @@ export class GameLogic
             this.game.gcount = 0
         }
 
+    }
+
+    logic()
+    {
+        if (this.game.cycle2 == true)
+        {
+            console.log("balls")
+        }
+        //So that beam disappears
+        if (this.game.rectangle == true)
+        {
+            this.game.beam++
+        }
+        if (this.game.beam >= 20)
+        {
+            this.game.rectangle = false
+        }
         
+
+        this.cycles()
         this.colcheck()
         this.DeathCheck()
     }

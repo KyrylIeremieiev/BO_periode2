@@ -24,6 +24,7 @@ class Game
         this.control=false;
         this.wfc=0;
         this.beamx=0;
+        this.diff=0;
         this.player = new Rect(0, 0, 24, 24)
         this.enemy=new Rect(200, 50, 350, 100)
         this.sscreen=new Rect(0, 0, 800, 400)
