@@ -54,7 +54,8 @@ export class GameRenderer{
             g.fillStyle = "#000000";
             let sscreen = this.game.sscreen;
             let clip2 = this.StartScreen;
-            g.drawImage(this.images[2], 
+            console.log(this.images);
+            g.drawImage(this.images[7], 
                 clip2.x, clip2.y, clip2.w, clip2.h, 
                 sscreen.x, sscreen.y, sscreen.w, sscreen.h)
             
