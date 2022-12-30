@@ -9,23 +9,34 @@ export class GameLogic
     {
         this.game.player.x = event.offsetX;
         this.game.y = event.offsetY;
-        console.log( this.game.y)
     }
 
     //mouse click inputs
     mouseClick(event)
     {
+        
+        if (this.game.death == true && this.game.end == false)
+        {
+            this.game.choice1 = true;
+        }
         //diff
-        if (this.game.death == true && this.game.end == false && this.game.y > 183 && this.game.y < 255)
+        if (this.game.choice2 == true && this.game.y > 183 && this.game.y < 255)
         {
             this.game.diff = 1;
+            this.game.choice2 = false;
+            this.game.choice1 = false;
             console.log(this.game.diff)
         }
-        else if (this.game.death == true && this.game.end == false && this.game.y > 298 && this.game.y < 380)
+        else if (this.game.choice2 == true && this.game.y > 298 && this.game.y < 380)
         {
             this.game.diff = 2;
+            this.game.choice2 = false;
+            this.game.choice1 = false;
             console.log(this.game.diff)
+
         }
+
+
         if (this.game.control == true)
         {
             if (this.game.player.x >= 50 && this.game.player.x <= 538)
@@ -34,7 +45,6 @@ export class GameLogic
             }
             this.game.rectangle=true;
             this.game.beam=0;
-            console.log(this.game.score)
         }
         if (this.game.death == true)
         {
@@ -108,7 +118,7 @@ export class GameLogic
         }
         else if (this.game.diff == 2)
         {
-            this.game.gcount +=2
+            this.game.gcount +=4
         }
         //cycles
         //cycle0
@@ -152,7 +162,7 @@ export class GameLogic
     {
         if (this.game.cycle2 == true)
         {
-            console.log("balls")
+
         }
         //So that beam disappears
         if (this.game.rectangle == true)
@@ -168,6 +178,12 @@ export class GameLogic
         this.cycles()
         this.colcheck()
         this.DeathCheck()
+
+        //debugging
+        if (this.game.choice1 == true)
+        {
+            this.game.choice2 = true;
+        }
     }
 
 }

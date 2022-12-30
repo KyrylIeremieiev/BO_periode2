@@ -22,6 +22,8 @@ class Game
         this.cycle2=false;
         this.end=false;
         this.control=false;
+        this.choice1=false;
+        this.choice2=false;
         this.wfc=0;
         this.beamx=0;
         this.diff=0;

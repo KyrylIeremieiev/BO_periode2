@@ -54,15 +54,25 @@ export class GameRenderer{
             g.fillStyle = "#000000";
             let sscreen = this.game.sscreen;
             let clip2 = this.StartScreen;
-            console.log(this.images);
-            g.drawImage(this.images[7], 
+            g.drawImage(this.images[2], 
                 clip2.x, clip2.y, clip2.w, clip2.h, 
                 sscreen.x, sscreen.y, sscreen.w, sscreen.h)
             
-                        
         }
-        if (this.game.death == false)
+
+        if (this.game.choice2 == true)
         {
+            let sscreen = this.game.sscreen;
+            let clip2 = this.StartScreen;
+            g.drawImage(this.images[7], 
+                clip2.x, clip2.y, clip2.w, clip2.h, 
+                sscreen.x, sscreen.y, sscreen.w, sscreen.h)
+        }
+
+
+        if (this.game.death == false && this.game.choice2 == false)
+        {
+            console.log("game is on")
             //score
             if (this.game.score <= 100)
             {
@@ -139,7 +149,6 @@ export class GameRenderer{
             if (this.game.end == true)
             {
                 g.fillStyle = "#000000";
-                console.log("end is nigh")
                 let sscreen = this.game.sscreen;
                 let clip2 = this.StartScreen;
                 g.drawImage(this.images[6], 
