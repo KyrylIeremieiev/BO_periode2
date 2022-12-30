@@ -59,7 +59,6 @@ class Game
 
     doGameFrame()
     {
-        this.gcount+=1
         this.logic.logic();
         this.renderer.render();
     }

@@ -9,18 +9,19 @@ export class GameLogic
     {
         this.game.player.x = event.offsetX;
         this.game.y = event.offsetY;
+        console.log( this.game.y)
     }
 
     //mouse click inputs
     mouseClick(event)
     {
         //diff
-        if (this.game.death == true && this.game.y < 200)
+        if (this.game.death == true && this.game.end == false && this.game.y > 183 && this.game.y < 255)
         {
             this.game.diff = 1;
             console.log(this.game.diff)
         }
-        else if (this.game.death == true && this.game.y > 200)
+        else if (this.game.death == true && this.game.end == false && this.game.y > 298 && this.game.y < 380)
         {
             this.game.diff = 2;
             console.log(this.game.diff)
@@ -100,6 +101,15 @@ export class GameLogic
 
     cycles()
     {
+        //diff
+        if (this.game.diff == 1)
+        {
+            this.game.gcount +=1;
+        }
+        else if (this.game.diff == 2)
+        {
+            this.game.gcount +=2
+        }
         //cycles
         //cycle0
         if(this.game.gcount == 0)
