@@ -18,7 +18,7 @@ export class GameRenderer{
     loadImages()
     {
         let sources = ["game/img/space_enemy.png", "game/img/player.png", "game/img/StartScreen.png",
-        "game/img/beam.png", "game/img/score1.png", "game/img/score2.png", "game/img/endscreen.png"];
+        "game/img/beam.png", "game/img/score1.png", "game/img/score2.png", "game/img/endscreen.png", "game/img/diffscreen.png"];
         for (let i = 0; i < sources.length; i++)
         {
             let loaded = 0
@@ -38,6 +38,7 @@ export class GameRenderer{
             img.src = sources[i];
 
             this.images.push(img)
+            console.log(typeof sources["game/img/diffscreen.psd"])
         }
     }
 
@@ -57,10 +58,21 @@ export class GameRenderer{
                 clip2.x, clip2.y, clip2.w, clip2.h, 
                 sscreen.x, sscreen.y, sscreen.w, sscreen.h)
             
-                        
         }
-        if (this.game.death == false)
+
+        if (this.game.choice2 == true)
         {
+            let sscreen = this.game.sscreen;
+            let clip2 = this.StartScreen;
+            g.drawImage(this.images[7], 
+                clip2.x, clip2.y, clip2.w, clip2.h, 
+                sscreen.x, sscreen.y, sscreen.w, sscreen.h)
+        }
+
+
+        if (this.game.death == false && this.game.choice2 == false)
+        {
+            console.log("game is on")
             //score
             if (this.game.score <= 100)
             {
@@ -104,14 +116,14 @@ export class GameRenderer{
 
             //boss beam
             //cycle 1
-            if(this.game.cycle1 == true && this.game.score <= 100 && this.game.gcount <= 500)
+            if(this.game.cycle1 == true)
             {
                 g.fillStyle = "#008000";
                 let beam = this.game.enemyBeam;
                 let clip3 = this.enemybeam;
                 g.drawImage(this.images[3], 
                     clip3.x, clip3.y, clip3.w, clip3.h, 
-                    beam.x, beam.y, beam.w, beam.h)
+                    this.game.beamx, beam.y, beam.w, beam.h)
             }
             //cycle 2
             if(this.game.cycle2 == true && this.game.gcount <=500)
@@ -121,7 +133,7 @@ export class GameRenderer{
                 let clip3 = this.enemybeam;
                 g.drawImage(this.images[3], 
                     clip3.x, clip3.y, clip3.w, clip3.h, 
-                    400, beam.y, beam.w, beam.h)
+                    this.game.beamx, beam.y, beam.w, beam.h)
             }
 
 
@@ -137,7 +149,6 @@ export class GameRenderer{
             if (this.game.end == true)
             {
                 g.fillStyle = "#000000";
-                console.log("end is nigh")
                 let sscreen = this.game.sscreen;
                 let clip2 = this.StartScreen;
                 g.drawImage(this.images[6], 
