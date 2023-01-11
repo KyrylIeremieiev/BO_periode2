@@ -68,3 +68,11 @@ Voor hele website in loadImages:
     }
 
 Je moet het ook dan runnen vanuit game/index.html als je alleen de game wil hebben
+
+
+------------------------------------------------------------------------------------ 
+Website update 1:
+
+sinds we de opdract gekregen hebben was ik vooral verantwoordelijk voor het bouwen van website. toen ik de opdracht gekregen met sprint 1 en 2 had ik wat opgebouwd, maar ik vond het niet leuk. dus ik besloot om bootstrap te gaan leren en werken op nieuwe eind versie. de oude versie kunt u vinden op website file.
+
+website eind versie:
