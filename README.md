@@ -74,5 +74,12 @@ Je moet het ook dan runnen vanuit game/index.html als je alleen de game wil hebb
 Website update 1:
 
 sinds we de opdracht hebben gekregen, was ik vooral verantwoordelijk voor het bouwen van website. Toen ik de opdracht gekregen met sprint 1 en 2 had ik wat opgebouwd, maar ik vond het niet leuk. Dus ik besloot om bootstrap te gaan leren en werken op nieuwe eind versie. de oude versie kunt u vinden op website file.
+--------------------------------------------------------------------------------
+Website einde versie: update 2
 
-website eind versie:
+Toen de vakantie begonnen, zoals ik gezegt heb, wil ik bootstap gaan leren. Dat heb ik vooral gedaan om onze website op een profesioneel mainer te gaan bouwen.
+
+Ik heb de bootstrap geleerd en ik heb de webstie opgebouwed en geupdate op githib. Let op als je de game toevoegt voeg het dan in Einde versie file.
+
+Momenteel wacht ik op feedback van docent dan ga ik de text van website toevoegen en knoppen activeren op een juiste manier.
+
