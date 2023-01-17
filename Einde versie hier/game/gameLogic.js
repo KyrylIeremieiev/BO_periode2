@@ -17,7 +17,7 @@ export class GameLogic
         //this part dictates the first 2 menus and starts the game + diff
         if(this.game.starter==true)
         {
-            this.game.choice2=true
+            this.game.choice1=true;
             this.game.starter=false;
         }
         if (this.game.choice2 == true && this.game.y > 183 && this.game.y < 255)
@@ -56,6 +56,15 @@ export class GameLogic
             this.beamCheck()
             this.colCheck()
             this.reset()
+        }
+        if(this.game.choice1==true)
+        {
+            this.game.wfc+=1
+            if(this.game.wfc>=20)
+            {
+                this.game.choice2=true
+                this.game.choice1=false
+            }
         }
     }
 
